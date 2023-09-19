@@ -13,7 +13,8 @@ public class AnimatorController : MonoBehaviour
         Walk,
         Run,
         Jumping,
-        Attacking
+        Attacking,
+        
     }
     public Animator _characterAnimator;
     private PlayerState _currentState;
