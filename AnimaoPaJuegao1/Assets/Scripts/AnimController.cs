@@ -12,24 +12,36 @@ public class AnimatorController : MonoBehaviour
         IdleBreaker,
         Walk,
         Run,
+
+
         Jumping,
         Attacking,
-        
+        Charging,
+        OwnHit,
+        ReceiveDamage,
+        Blocked,
+        Fail
+
     }
     public Animator _characterAnimator;
     private PlayerState _currentState;
     void Start()
     {
-        _characterAnimator.SetBool("Idle", true);
-        SetState(PlayerState.Idle);
+        //_characterAnimator.SetBool("Idle", true);
+        //SetState(PlayerState.Idle);
+        _characterAnimator.SetInteger("Controlador", 0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerState newState = DeterminateState();
-        if (newState != _currentState)
-            SetState(newState);
+        // PlayerState newState = DeterminateState();
+        //if (newState != _currentState)
+        //  SetState(newState);
+        //TheInput();
+        StartCoroutine(waiting());
+
     }
 
 
@@ -94,7 +106,7 @@ public class AnimatorController : MonoBehaviour
         {
             return PlayerState.Walk;
         }
-        else if(IsRunning())
+        else if (IsRunning())
         {
             return PlayerState.Idle;
         }
@@ -102,7 +114,7 @@ public class AnimatorController : MonoBehaviour
         {
             return PlayerState.Attacking;
         }
-        else if(isJumping())
+        else if (isJumping())
         {
             return PlayerState.Jumping;
         }
@@ -126,5 +138,94 @@ public class AnimatorController : MonoBehaviour
     {
         return Input.GetKey(KeyCode.A);
 
+    }
+    private void TheInput()
+    {
+        if (Input.GetKey(KeyCode.A)) {
+            _characterAnimator.SetInteger("Controlador", 1);
+            StartCoroutine(waiting());
+            Debug.Log("Esperé");
+            //_characterAnimator.SetInteger("Controlador", 0);
+        }
+       else if (Input.GetKey(KeyCode.S))
+        {
+            _characterAnimator.SetInteger("Controlador", 2);
+            StartCoroutine(waiting());
+            //_characterAnimator.SetInteger("Controlador", 0);
+
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            _characterAnimator.SetInteger("Controlador", 3);
+            StartCoroutine(waiting());
+
+            //_characterAnimator.SetInteger("Controlador", 0);
+        }
+        else if (Input.GetKey(KeyCode.F))
+        {
+            _characterAnimator.SetInteger("Controlador", 4);
+            StartCoroutine(waiting());
+
+            //_characterAnimator.SetInteger("Controlador", 0);
+        }
+        else if (Input.GetKey(KeyCode.G))
+        {
+            _characterAnimator.SetInteger("Controlador", 5);
+            StartCoroutine(waiting());
+
+            //_characterAnimator.SetInteger("Controlador", 0);
+        }
+        else if (Input.GetKey(KeyCode.H))
+        {
+            _characterAnimator.SetInteger("Controlador", 6);
+            StartCoroutine(waiting());
+
+            //_characterAnimator.SetInteger("Controlador", 0);
+        }
+    }
+    IEnumerator waiting()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            _characterAnimator.SetInteger("Controlador", 1);
+            yield return new WaitForSeconds(1);
+            Debug.Log("Esperé");
+            _characterAnimator.SetInteger("Controlador", 0);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            _characterAnimator.SetInteger("Controlador", 2);
+            yield return new WaitForSeconds(1);
+            _characterAnimator.SetInteger("Controlador", 0);
+
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            _characterAnimator.SetInteger("Controlador", 3);
+            yield return new WaitForSeconds(1);
+
+            _characterAnimator.SetInteger("Controlador", 0);
+        }
+        else if (Input.GetKey(KeyCode.F))
+        {
+            _characterAnimator.SetInteger("Controlador", 4);
+            yield return new WaitForSeconds(1);
+
+            _characterAnimator.SetInteger("Controlador", 0);
+        }
+        else if (Input.GetKey(KeyCode.G))
+        {
+            _characterAnimator.SetInteger("Controlador", 5);
+            yield return new WaitForSeconds(1);
+
+            _characterAnimator.SetInteger("Controlador", 0);
+        }
+        else if (Input.GetKey(KeyCode.H))
+        {
+            _characterAnimator.SetInteger("Controlador", 6);
+            yield return new WaitForSeconds(1);
+
+            _characterAnimator.SetInteger("Controlador", 0);
+        }
     }
 }
