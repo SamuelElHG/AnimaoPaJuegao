@@ -3,7 +3,12 @@ guid: 82e603cd728e9634fbd0a84023587ec9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TP_TrainingBot_S0_MI1.001
+    second: {fileID: 2100000, guid: 073e160016b9c674abf2b703d6ef0b23, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

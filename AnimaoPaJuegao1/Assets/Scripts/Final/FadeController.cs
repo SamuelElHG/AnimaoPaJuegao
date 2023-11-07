@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FadeController : MonoBehaviour
@@ -22,14 +23,14 @@ public class FadeController : MonoBehaviour
         
         if (Input.anyKey)
         {
-            if (Input.GetKey(KeyCode.A)) //walk foward
+            if (Input.GetKey(KeyCode.A)) //caminar izquierda
             { FadeAnimator.SetInteger("TheInput", 1);
-            transform.position = transform.position+new Vector3(1*moveSpeed*Time.deltaTime, 0, 0);
+            transform.position = transform.position+new Vector3(-1*moveSpeed*Time.deltaTime, 0, 0);
             }
 
             if (Input.GetKey(KeyCode.D)) //walk backwards
             { FadeAnimator.SetInteger("TheInput", 1);
-                transform.position = transform.position + new Vector3(-1 * moveSpeed * Time.deltaTime, 0, 0);
+                transform.position = transform.position + new Vector3(1 * moveSpeed * Time.deltaTime, 0, 0);
             }
 
             if (Input.GetKeyDown(KeyCode.W))//jump
@@ -42,14 +43,24 @@ public class FadeController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F)) //Punch
             { FadeAnimator.SetInteger("TheInput", 3); }
 
-            if (Input.GetKeyDown(KeyCode.G))//Dash
-            { FadeAnimator.SetInteger("TheInput", 4);
-                transform.position = transform.position + new Vector3(-dashForce,0, 0);
-            }
+           // if (Input.GetKeyDown(KeyCode.G))//Dash
+            //{ FadeAnimator.SetInteger("TheInput", 4);
+            //  transform.position = transform.position + new Vector3(-dashForce,0, 0);
+            //}
 
             if (Input.GetKeyDown(KeyCode.S)) //Crouch
             { FadeAnimator.SetInteger("TheInput", 5); }
 
+            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.G))//dash izquierda
+            {
+                FadeAnimator.SetInteger("TheInput", 4);
+                transform.position = transform.position + new Vector3(-dashForce, 0, 0);
+            }
+            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.G))//dash derecha
+            {
+                FadeAnimator.SetInteger("TheInput", 4);
+                transform.position = transform.position + new Vector3(dashForce, 0, 0);
+            }
         }
         else FadeAnimator.SetInteger("TheInput", 0);
         
@@ -60,5 +71,10 @@ public class FadeController : MonoBehaviour
         FadeAnimator.SetInteger("TheInput", 2);
         yield return new WaitForSeconds(JumpDelay);
         transform.position = transform.position + new Vector3(0,JumpForce, 0);
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Impacto");
+        FadeAnimator.SetInteger("TheInput", 6);
     }
 }

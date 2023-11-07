@@ -3,7 +3,32 @@ guid: a53af180740b16640bba2a94a850b772
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 4f5957b051f3e084eabafd717b30296a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye Glow
+    second: {fileID: 2100000, guid: 0c1054e964c656c489b8c58f7d7c677b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye Shadow
+    second: {fileID: 2100000, guid: b7099a002a9929a40971863b8daf4ced, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 0534546a667ac72438e0ff527a46fe0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: material_2.001
+    second: {fileID: 2100000, guid: a18a2d694b88f98439e543a55ca1923f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
