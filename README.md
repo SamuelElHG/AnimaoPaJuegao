@@ -5,4 +5,11 @@ Assets > Scenes > 21092023
 
 
 # Trabajo Final:
-En la escena de Animaions scenes está configurado el muñeco con las transiciones y los placeholders. Por ahora está configurado con botones de la A a la H para las transiciones
+Escena: Assets > Scenes > Final Animation
+Modelos: 
+Assets > Animations > FinalAnimations > Fade_Animations
+Assets > Animations > FinalAnimations > Training Bot v2
+
+![image](https://github.com/SamuelElHG/AnimaoPaJuegao/assets/94467746/534fc6b5-a010-4b3e-ae64-f8a47b2e4b2d)
+
+Doc evaluación: https://docs.google.com/document/d/1ctkrmXuIoKoNJ05eXElLc4aWTf41MS0oBAd079TSIRg/edit?usp=sharing
