@@ -18,3 +18,8 @@ Doc evaluación: https://docs.google.com/document/d/1ctkrmXuIoKoNJ05eXElLc4aWTf4
 
 # Computación Gráfica
 Referencias Samuel Hernández Gómez: https://www.youtube.com/watch?v=7ePWNmLP0Z0
+
+Referencias Sebastián Franco Cataño:
+![image](https://github.com/SamuelElHG/AnimaoPaJuegao/assets/82066007/7c31805f-0554-416f-ad8c-e55abab1f2c5)
+![image](https://github.com/SamuelElHG/AnimaoPaJuegao/assets/82066007/76a5ad4f-4517-4faa-a0cf-a5c464184453)
+https://www.youtube.com/watch?v=RW9rxUCWae8
