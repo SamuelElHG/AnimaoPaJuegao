@@ -39,7 +39,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _PixelAlgo: 0
-    - _Valor: 1
+    - _Valor: 4
     m_Colors:
+    - _Posicion: {r: -15.17, g: -4.35, b: -10.07, a: 0}
     - _TheColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

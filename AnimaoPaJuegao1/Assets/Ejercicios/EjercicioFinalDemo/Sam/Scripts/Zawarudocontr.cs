@@ -9,28 +9,46 @@ public class Zawarudocontr : MonoBehaviour
     [SerializeField] Material zawaMaterial;
     [SerializeField] Material NorMaterial;
     [SerializeField] Slider zawardoSlider;
+
+    [SerializeField] AudioSource audi;
+    [SerializeField] AudioClip clip;
+
+    private float time = 4.0f;
+
     string mat;
+    public bool sequencing = false;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(zawaMaterial.GetFloat("_Valor"));
+        zawaMaterial.SetVector("_Position", transform.position);
+        Debug.Log(zawaMaterial.GetVector("_Position"));
+        //Debug.Log(zawaMaterial.GetFloat("_Valor"));
         zawardo.passMaterial = NorMaterial;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && sequencing == false  )
         {
-            zawardo.passMaterial = zawaMaterial;
+            StartCoroutine(sequence());
         }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            zawardo.passMaterial = NorMaterial;
-        }
+        zawaMaterial.SetVector("_Position", transform.position);
+
     }
     public void slideChange()
     {
-        zawaMaterial.SetFloat("_Valor", zawardoSlider.value);
+        //zawaMaterial.SetFloat("_Valor", zawardoSlider.value);
+        time = zawardoSlider.value;
+    }
+
+    IEnumerator sequence()
+    {
+        sequencing = true;
+        zawardo.passMaterial=zawaMaterial;
+        audi.PlayOneShot(clip, 10f);
+        yield return new WaitForSeconds(time);
+        zawardo.passMaterial = NorMaterial;
+        sequencing = false;
     }
 }
