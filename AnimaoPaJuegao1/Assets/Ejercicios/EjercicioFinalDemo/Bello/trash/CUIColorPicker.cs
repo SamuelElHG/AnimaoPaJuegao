@@ -17,6 +17,8 @@ public class CUIColorPicker : MonoBehaviour
     private GameObject material;
     [SerializeField]
     private GameObject material1;
+    [SerializeField]
+    private GameObject material2;
     private static void RGBToHSV( Color color, out float h, out float s, out float v )
     {
         var cmin = Mathf.Min( color.r, color.g, color.b );
@@ -177,7 +179,7 @@ public class CUIColorPicker : MonoBehaviour
    
     void Awake()
     {
-        Color = Color.red;
+        Color = Color.cyan;
 
     }
 
@@ -193,6 +195,9 @@ public class CUIColorPicker : MonoBehaviour
     {
         material.GetComponent<Renderer>().material.SetColor("_baseColor", Color);
         material1.GetComponent<Renderer>().material.SetColor("_Color", Color);
+        material2.GetComponent<ParticleSystem>().main.startColor.Equals(Color);
+            //ColorModule.gradient
+
     }
 
 }
