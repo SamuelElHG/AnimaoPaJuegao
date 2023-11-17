@@ -10233,6 +10233,31 @@ PrefabInstance:
       propertyPath: m_ExposedReferences.m_References.Array.data[5].second
       value: 
       objectReference: {fileID: 489167169}
+    - target: {fileID: 4250532892704034957, guid: 5862b65f84452c74a90fc3559ad50b64,
+        type: 3}
+      propertyPath: ColorModule.gradient.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250532892704034957, guid: 5862b65f84452c74a90fc3559ad50b64,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250532892704034957, guid: 5862b65f84452c74a90fc3559ad50b64,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250532892704034957, guid: 5862b65f84452c74a90fc3559ad50b64,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4250532892704034957, guid: 5862b65f84452c74a90fc3559ad50b64,
+        type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5166268891959621511, guid: 5862b65f84452c74a90fc3559ad50b64,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10291,7 +10316,7 @@ PrefabInstance:
     - target: {fileID: 7807017520908634096, guid: 5862b65f84452c74a90fc3559ad50b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8120197605438310144, guid: 5862b65f84452c74a90fc3559ad50b64,
         type: 3}

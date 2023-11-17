@@ -18,7 +18,21 @@ public class CUIColorPicker : MonoBehaviour
     [SerializeField]
     private GameObject material1;
     [SerializeField]
-    private GameObject material2;
+    private ParticleSystem francoParticle1;
+    [SerializeField]
+    private ParticleSystem francoParticle2;
+    [SerializeField]
+    private ParticleSystem francoParticle3;
+    [SerializeField]
+    private ParticleSystem francoParticle4;
+    [SerializeField]
+    private ParticleSystem francoParticle5;
+    [SerializeField]
+    private ParticleSystem francoParticle6;
+    [SerializeField]
+    private ParticleSystem francoParticle7;
+    [SerializeField]
+    private ParticleSystem francoParticle8;
     private static void RGBToHSV( Color color, out float h, out float s, out float v )
     {
         var cmin = Mathf.Min( color.r, color.g, color.b );
@@ -195,9 +209,124 @@ public class CUIColorPicker : MonoBehaviour
     {
         material.GetComponent<Renderer>().material.SetColor("_baseColor", Color);
         material1.GetComponent<Renderer>().material.SetColor("_Color", Color);
-        material2.GetComponent<ParticleSystem>().main.startColor.Equals(Color);
-            //ColorModule.gradient
 
+        //Franco first particle thing
+        francoParticle1.GetComponent<ParticleSystem>();
+
+        var colorOverLifeTime = francoParticle1.colorOverLifetime;
+        colorOverLifeTime.enabled = true;
+
+        var mainModule = francoParticle1.main;
+        mainModule.startColor = Color;
+
+        Gradient gradientFranco1 = new Gradient();
+        gradientFranco1.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
+        );
+        colorOverLifeTime.color = new ParticleSystem.MinMaxGradient(gradientFranco1);
+
+        //Franco second particle thing
+        francoParticle2.GetComponent<ParticleSystem>();
+
+        var colorOverLifeTime2 = francoParticle2.colorOverLifetime;
+        colorOverLifeTime2.enabled = true;
+
+        var mainModule2 = francoParticle1.main;
+        mainModule2.startColor = Color;
+
+        Gradient gradientFranco2 = new Gradient();
+        gradientFranco2.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(0.0f, 0.2f), new GradientAlphaKey(1.0f, 0.5f), new GradientAlphaKey(1.0f, 0.6f), new GradientAlphaKey(0.0f, 0.8f) }
+        );
+        colorOverLifeTime2.color = new ParticleSystem.MinMaxGradient(gradientFranco2);
+
+        //Franco third particle thing
+        francoParticle3.GetComponent<ParticleSystem>();
+
+        var colorOverLifeTime3 = francoParticle3.colorOverLifetime;
+        colorOverLifeTime3.enabled = true;
+
+        var mainModule3 = francoParticle3.main;
+        mainModule3.startColor = Color;
+
+        Gradient gradientFranco3 = new Gradient();
+        gradientFranco3.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(0.0f, 0.2f), new GradientAlphaKey(1.0f, 0.5f), new GradientAlphaKey(1.0f, 0.6f), new GradientAlphaKey(0.0f, 0.8f) }
+        );
+        colorOverLifeTime3.color = new ParticleSystem.MinMaxGradient(gradientFranco3);
+
+        //Franco fourth particle thing
+        francoParticle4.GetComponent<ParticleSystem>();
+
+        var colorOverLifeTime4 = francoParticle4.colorOverLifetime;
+        colorOverLifeTime4.enabled = true;
+
+        var mainModule4 = francoParticle4.main;
+        mainModule4.startColor = Color;
+
+        Gradient gradientFranco4 = new Gradient();
+        gradientFranco4.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(0.0f, 0.0f), new GradientAlphaKey(1.0f, 0.06f), new GradientAlphaKey(1.0f, 0.7f), new GradientAlphaKey(0.0f, 1.0f) }
+        );
+        colorOverLifeTime4.color = new ParticleSystem.MinMaxGradient(gradientFranco4);
+
+        //Franco five particle thing
+        francoParticle5.GetComponent<ParticleSystem>();
+
+        var colorOverLifeTime5 = francoParticle5.colorOverLifetime;
+        colorOverLifeTime5.enabled = true;
+
+        var mainModule5 = francoParticle5.main;
+        mainModule5.startColor = Color;
+
+        Gradient gradientFranco5 = new Gradient();
+        gradientFranco5.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(0.0f, 0.0f), new GradientAlphaKey(1.0f, 0.06f), new GradientAlphaKey(1.0f, 0.7f), new GradientAlphaKey(0.0f, 1.0f) }
+        );
+        colorOverLifeTime5.color = new ParticleSystem.MinMaxGradient(gradientFranco5);
+
+        //Franco six particle thing
+        francoParticle6.GetComponent<ParticleSystem>();
+
+        var colorOverLifeTime6 = francoParticle6.colorOverLifetime;
+        colorOverLifeTime6.enabled = true;
+
+        var mainModule6 = francoParticle6.main;
+        mainModule6.startColor = Color;
+
+        Gradient gradientFranco6 = new Gradient();
+        gradientFranco6.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
+        );
+        colorOverLifeTime6.color = new ParticleSystem.MinMaxGradient(gradientFranco6);
+
+        //Franco seven particle thing
+        francoParticle7.GetComponent<ParticleSystem>();
+
+        var colorOverLifeTime7 = francoParticle7.colorOverLifetime;
+        colorOverLifeTime7.enabled = true;
+
+        var mainModule7 = francoParticle7.main;
+        mainModule7.startColor = Color;
+
+        Gradient gradientFranco7 = new Gradient();
+        gradientFranco7.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(Color, 0.0f), new GradientColorKey(Color.white, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(1.0f, 0.0f), new GradientAlphaKey(0.0f, 1.0f) }
+        );
+        colorOverLifeTime7.color = new ParticleSystem.MinMaxGradient(gradientFranco7);
+
+        //Franco eight particle thing
+        francoParticle8.GetComponent<ParticleSystem>();
+
+        var mainModule8 = francoParticle8.main;
+        mainModule8.startColor = Color;
     }
 
 }
