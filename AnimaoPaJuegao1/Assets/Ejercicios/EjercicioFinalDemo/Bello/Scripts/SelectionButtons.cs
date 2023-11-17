@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class SelectionButtons : MonoBehaviour
@@ -11,6 +12,9 @@ public class SelectionButtons : MonoBehaviour
     [SerializeField]
     private GameObject thirdEffect;
 
+    [SerializeField] private GameObject colorPicker;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,23 +25,39 @@ public class SelectionButtons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
-            ActivateEffect(1);
+            //ActivateEffect(1);
+
+            firstEffect.SetActive(true);
+            secondEffect.SetActive(false);
+            thirdEffect.SetActive(false);
+
+            colorPicker.SetActive(true);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
         {
-            ActivateEffect(2);
+            //ActivateEffect(2);
+            firstEffect.SetActive(false);
+            secondEffect.SetActive(true);
+            thirdEffect.SetActive(false);
+            colorPicker.SetActive(true);
+
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
         {
-            ActivateEffect(3);
+            //ActivateEffect(3);
+            firstEffect.SetActive(false);
+            secondEffect.SetActive(false);
+            thirdEffect.SetActive(true);
+            colorPicker.SetActive(false);
+
         }
     }
 
-    public void ActivateEffect(int numberAssigned)
+  /*  public void ActivateEffect(int numberAssigned)
     {
         Debug.Log("pressed button");
         switch (numberAssigned)
@@ -85,5 +105,5 @@ public class SelectionButtons : MonoBehaviour
                 Debug.Log("default");
                 break;
         }
-    }
+    }*/
 }

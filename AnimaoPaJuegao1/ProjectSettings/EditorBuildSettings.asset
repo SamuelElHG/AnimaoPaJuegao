@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AnimationsScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Ejercicios/EjercicioFinalDemo/Bello/Bello.unity
+    guid: b427bcd7762f94a48a79a72cc037236e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d4d98af41a3857f4fbfe4748b5dbe8ba,
       type: 2}
