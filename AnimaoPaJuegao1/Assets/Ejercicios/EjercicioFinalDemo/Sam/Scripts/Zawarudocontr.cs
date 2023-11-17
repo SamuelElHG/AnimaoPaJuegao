@@ -51,4 +51,5 @@ public class Zawarudocontr : MonoBehaviour
         zawardo.passMaterial = NorMaterial;
         sequencing = false;
     }
+
 }
